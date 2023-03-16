@@ -30,25 +30,28 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import SignIn from "./containers/sign/sign_in/SignIn";
 import SignUp from "./containers/sign/sign_up/SignUp";
 import HomeLayout from "./components/common/layouts/HomeLayout";
+import Container from 'react-bootstrap/Container';
+import Header from "./components/Header";
 
 function App() {
 
   return (
       <>
-          <Router>
-              <Routes>
-                  <Route path="/" element={<HomeLayout />}>
+          <Container fluid>
+              <Header />
+                  <Routes>
+                      <Route path="/" element={<HomeLayout />}>
 
-                  </Route>
-                  <Route path="/each/signIn" element={<SignIn />}>
+                      </Route>
+                      <Route path="/each/signIn" element={<SignIn />}>
 
-                  </Route>
-                  <Route path="/each/signUp" element={<SignUp />}>
+                      </Route>
+                      <Route path="/each/signUp" element={<SignUp />}>
 
-                  </Route>
+                      </Route>
 
-              </Routes>
-          </Router>
+                  </Routes>
+          </Container>
       </>
 
   );

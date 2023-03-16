@@ -1,8 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
 
 const SignIn = () => {
+
+    const navigate = useNavigate();
+
+    const onClickSignUp = () => {
+        navigate(`/each/signUp`);
+    };
+
     const [inputId, setInputId] = useState("");
     const [inputPw, setInputPw] = useState("");
 
@@ -69,6 +77,7 @@ const SignIn = () => {
             >
                 확인
             </Button>
+            <Button variant="success" onClick={onClickSignUp}>회원가입</Button>{' '}
 
         </>
 
