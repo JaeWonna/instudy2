@@ -39,6 +39,8 @@ import Todo from "./pages/Todo";
 import Calendar from "./pages/Calendar";
 import Feed from "./pages/Feed";
 import Rank from "./pages/Rank";
+import Group from "./pages/Group"
+import Profile from "./pages/Profile"
 
 function App() {
 
@@ -82,6 +84,10 @@ function App() {
                       <Route path="/feed" element={<Feed />}>
                       </Route>
                       <Route path="/rank" element={<Rank />}>
+                      </Route>
+                      <Route path="/group" element={<Group />}>
+                      </Route>
+                      <Route path="/profile" element={<Profile />}>
                       </Route>
 
                   </Routes>
