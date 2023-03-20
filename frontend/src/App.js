@@ -27,16 +27,38 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import axios from "axios";
 import SignIn from "./containers/sign/sign_in/SignIn";
 import SignUp from "./containers/sign/sign_up/SignUp";
 import HomeLayout from "./components/common/layouts/HomeLayout";
 import Container from 'react-bootstrap/Container';
 import Header from "./components/Header";
+import Task from "./pages/Task";
+import StudyTime from "./pages/StudyTime";
+import Todo from "./pages/Todo";
+import Calendar from "./pages/Calendar";
+import Feed from "./pages/Feed";
+import Rank from "./pages/Rank";
 
 function App() {
 
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        axios({
+            method: 'GET',
+            url: 'https://jsonplaceholder.typicode.com/posts', // 가짜 api posts (https://jsonplaceholder.typicode.com/posts)
+        }).then(response => setPosts(response.data)) // response에서 가져온 데이터를 setPosts에 넣어준다
+    })
+
   return (
       <>
+          {/*데이터 출력*/}
+          {/*<ul>*/}
+          {/*    {posts.map(post => (*/}
+          {/*        <li key={post.id}>{post.title}</li>*/}
+          {/*    ))}*/}
+          {/*</ul>*/}
           <Container fluid>
               <Header />
                   <Routes>
@@ -48,6 +70,18 @@ function App() {
                       </Route>
                       <Route path="/each/signUp" element={<SignUp />}>
 
+                      </Route>
+                      <Route path="/task" element={<Task />}>
+                      </Route>
+                      <Route path="/todo" element={<Todo />}>
+                      </Route>
+                      <Route path="/calendar" element={<Calendar />}>
+                      </Route>
+                      <Route path="/studytime" element={<StudyTime />}>
+                      </Route>
+                      <Route path="/feed" element={<Feed />}>
+                      </Route>
+                      <Route path="/rank" element={<Rank />}>
                       </Route>
 
                   </Routes>
