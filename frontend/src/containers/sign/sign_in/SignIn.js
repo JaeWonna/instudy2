@@ -11,8 +11,8 @@ const SignIn = () => {
         navigate(`/each/signUp`);
     };
 
-    const [inputId, setInputId] = useState("");
-    const [inputPw, setInputPw] = useState("");
+    const [inputId, setInputId] = useState("id");
+    const [inputPw, setInputPw] = useState("pw");
 
     const handleInputId = (e) => {
         setInputId(e.target.value);
