@@ -12,9 +12,9 @@ function HomeLayout() {
         ];
 
         setMenu([...menudata]);
-    }, [])
 
-    console.log(menu);
+        console.log(menu);
+    }, []);
 
     return (
         <main>
