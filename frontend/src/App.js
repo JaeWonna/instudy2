@@ -67,12 +67,13 @@ function App() {
                       <Route path="/" element={<HomeLayout />}>
 
                       </Route>
-                      <Route path="/each/signIn" element={<SignIn />}>
+                      <Route path="/signIn/:id" element={<SignIn />}>
 
                       </Route>
-                      <Route path="/each/signUp" element={<SignUp />}>
+                      <Route path="/signUp" element={<SignUp />}>
 
                       </Route>
+                      {/*<Route path="/signInv2" element={<SignIn>}*/}
                       <Route path="/task" element={<Task />}>
                       </Route>
                       <Route path="/todo" element={<Todo />}>

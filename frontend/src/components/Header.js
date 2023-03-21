@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 
-function Header(){
+function Header(props){
     const [isLogin, setIsLogin] = useState(false);
+
+    // useEffect(()=> {
+    //     let cookie = getCookie('쿠키 이름');
+    //     console.log(cookie);
+    //     if(cookie){
+    //         setIsLogin(true);
+    //     }
+    //     else{
+    //         setIsLogin(false);
+    //     }
+    // })
 
     const navigate = useNavigate();
 
     const onClickLogin = () => {
-        navigate(`/each/signIn`);
+        navigate(`/signIn/id`);
+    };
+
+    const onClickSignUp = () => {
+        navigate(`/signUp`);
     };
 
     return (
@@ -32,13 +47,8 @@ function Header(){
                         <Navbar bg="dark" variant="dark">
                             <Navbar.Brand href="/">InStudy</Navbar.Brand>
                             <Nav className="me-auto">
-                                <Nav.Link><Link to="/task" style={{ textDecoration: 'none' }}>과제</Link></Nav.Link>
-                                <Nav.Link><Link to="/todo" style={{ textDecoration: 'none' }}>Todo</Link></Nav.Link>
-                                <Nav.Link><Link to="/calendar" style={{ textDecoration: 'none' }}>캘린더</Link></Nav.Link>
-                                <Nav.Link><Link to="/studytime" style={{ textDecoration: 'none' }}>공부시간</Link></Nav.Link>
-                                <Nav.Link><Link to="/feed" style={{ textDecoration: 'none' }}>피드</Link></Nav.Link>
-                                <Nav.Link><Link to="/rank" style={{ textDecoration: 'none' }}>랭킹</Link></Nav.Link>
                             <Button variant="light" onClick={onClickLogin}>로그인</Button>{' '}
+                                <Button variant="light" onClick={onClickSignUp}>회원가입</Button>{' '}
                             </Nav>
                         </Navbar>
                     )
