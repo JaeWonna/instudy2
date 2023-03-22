@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import { Nav, Navbar, Button, Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Header(props){
     const [isLogin, setIsLogin] = useState(false);
@@ -34,7 +33,7 @@ function Header(props){
                 isLogin == true
                     ? (
                         <Navbar bg="dark" variant="dark">
-                            <Navbar.Brand href="#home">InStudy</Navbar.Brand>
+                            <Navbar.Brand href="/">InStudy</Navbar.Brand>
                             <Nav className="me-auto">
                                 <Nav.Link href="#home">Home</Nav.Link>
                                 <Nav.Link href="#features">Features</Nav.Link>
@@ -44,13 +43,35 @@ function Header(props){
                         </Navbar>
                     )
             : (
+                        // <Container>
+                            <Row>
                         <Navbar bg="dark" variant="dark">
+                            <Col>
                             <Navbar.Brand href="/">InStudy</Navbar.Brand>
+                            </Col>
                             <Nav className="me-auto">
-                            <Button variant="light" onClick={onClickLogin}>로그인</Button>{' '}
-                                <Button variant="light" onClick={onClickSignUp}>회원가입</Button>{' '}
+                                    <Button variant="light" onClick={onClickLogin}>로그인</Button>
+                                    <Button variant="light" onClick={onClickSignUp}>회원가입</Button>
                             </Nav>
                         </Navbar>
+                            </Row>
+                        // </Container>
+
+            //     <div className="EditorNav" className="EditorNav">
+            //     <container>
+            //     <Row xs="5" className="marginTop">
+            //     <Col>
+            //     <a href="/"></a>
+            //     </Col>
+            //     <Col>
+            // {/*Button list*/}
+            //     <Button variant="outline-success"  style={{position: 'absolute', right: 0, marginRight: "30px"}}className="buttonMargin">로그인</Button>{' '}
+            //     <Button variant="outline-success" className="buttonMargin">회원가입</Button>{' '}
+            //     </Col>
+            //     </Row>
+            //     </container>
+            //     </div>
+
                     )
             }
         </>
