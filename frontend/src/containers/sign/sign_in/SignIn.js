@@ -3,16 +3,15 @@ import axios from "axios";
 import { Form, Button } from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 
-const SignIn = () => {
-
+const SignIn = (props) => {
     const navigate = useNavigate();
 
     const onClickSignUp = () => {
-        navigate(`/each/signUp`);
+        navigate(`/signUp`);
     };
 
-    const [inputId, setInputId] = useState("id");
-    const [inputPw, setInputPw] = useState("pw");
+    const [inputId, setInputId] = useState("");
+    const [inputPw, setInputPw] = useState("");
 
     const handleInputId = (e) => {
         setInputId(e.target.value);
@@ -27,7 +26,7 @@ const SignIn = () => {
         console.log("ID : ", inputId);
         console.log("PW : ", inputPw);
         axios
-            .post("http://localhost:8080/api/login", {
+            .post("/api/login", {
                 email: inputId,
                 passwd: inputPw,
             })
@@ -78,6 +77,7 @@ const SignIn = () => {
                 확인
             </Button>
             <Button variant="success" onClick={onClickSignUp}>회원가입</Button>{' '}
+            {/*<Button onclick={() => props.history.push('/')}>뒤로가기</Button>*/}
 
         </>
 
