@@ -44,23 +44,20 @@ import Profile from "./pages/Profile"
 
 function App() {
 
-    const [posts, setPosts] = useState([]);
+    const [hello, setHello] = useState('')
 
     useEffect(() => {
-        axios({
-            method: 'GET',
-            url: 'https://jsonplaceholder.typicode.com/posts', // 가짜 api posts (https://jsonplaceholder.typicode.com/posts)
-        }).then(response => setPosts(response.data)) // response에서 가져온 데이터를 setPosts에 넣어준다
-    })
+        axios.get('/api/hello')
+            .then(response => setHello(response.data))
+            .catch(error => console.log(error))
+    }, []);
 
   return (
       <>
-          {/*데이터 출력*/}
-          {/*<ul>*/}
-          {/*    {posts.map(post => (*/}
-          {/*        <li key={post.id}>{post.title}</li>*/}
-          {/*    ))}*/}
-          {/*</ul>*/}
+          <div>
+              백엔드에서 가져온 데이터입니다 : {hello}
+          </div>
+
           <Container fluid>
               <Header />
                   <Routes>
