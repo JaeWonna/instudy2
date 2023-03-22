@@ -1,4 +1,4 @@
-import Card from 'react-bootstrap/Card';
+import {Container, Row, Col} from 'react-bootstrap';
 import HomeCard from "../../Home/HomeCard";
 import React, { useState, useEffect } from "react";
 
@@ -18,23 +18,22 @@ function HomeLayout() {
 
     return (
         <main>
-            <h1>메인페이지</h1>
 
-            <hr class="col-3 col-md-2 mb-5"/>
+                <Row>
+            <div>메인페이지입니다</div>
+                </Row>
 
-            <div class="row g-5">
-                <div class="col-md-8">
+            <Row>
                     <h2>메뉴</h2>
-                    <ul class="icon-list">
+                <hr/>
                         {
                             menu.map((menu) => (
-                                <HomeCard menu={menu}/>
+                                <Col><HomeCard menu={menu}/></Col>
                             ))
                         }
-                    </ul>
 
-                </div>
-            </div>
+            </Row>
+
         </main>
     )
 }
