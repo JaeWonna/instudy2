@@ -26,7 +26,7 @@ export default App;*/import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import axios from "axios";
 import SignIn from "./containers/sign/sign_in/SignIn";
 import SignUp from "./containers/sign/sign_up/SignUp";
@@ -41,6 +41,7 @@ import Feed from "./pages/Feed";
 import Rank from "./pages/Rank";
 import Group from "./pages/Group"
 import Profile from "./pages/Profile"
+import BottomNav from './BottomNav';
 
 function App() {
 
@@ -56,6 +57,9 @@ function App() {
       <>
           <div>
               백엔드에서 가져온 데이터입니다 : {hello}
+          </div>
+          <div>
+            <Link to="/bottomNav">BottomNav</Link>
           </div>
 
           <Container fluid>
@@ -87,6 +91,7 @@ function App() {
                       </Route>
                       <Route path="/profile" element={<Profile />}>
                       </Route>
+                      <Route path="/bottomNav" element={<BottomNav />}></Route>
 
                   </Routes>
           </Container>
