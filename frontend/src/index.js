@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import BottomNav from './BottomNav';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+  <BottomNav /> 
+   {/* bottom nav가 항상 떠있도록 index.js에서 호출 */}
     <App />
   </BrowserRouter>
 );

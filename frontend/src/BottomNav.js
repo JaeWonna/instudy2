@@ -1,16 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 // 사용할 아이콘 import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
+
 
 import './css/BottomNav.css';
 
 const BottomNav = () => {
+  // 현재 선택된 아이콘을 관리하는 state
+  const [activeNav, setActiveNav] = useState(1);
+
     return (
             <nav className="wrapper">
       {/* 하단 네비게이션 최상위 태그 */}
-      <div><FontAwesomeIcon icon={faUsers} className="users" /></div>
-      <div><FontAwesomeIcon icon={faAddressCard} className="addresscard" /></div>
+
+      <div>{""}</div>
+
+      <div>
+      <Link to="/" className="nav-link" onClick={() => setActiveNav(1)}>
+        <FontAwesomeIcon icon={faHome} className={activeNav === 1 ? "nav-item active" : "nav-item"} />
+        </Link>
+        </div>
+
+      <div>
+      <Link to="/group" className="nav-link" onClick={() => setActiveNav(2)}>
+        <FontAwesomeIcon icon={faUsers} className={activeNav === 2 ? "nav-item active" : "nav-item"} />
+        </Link>
+        </div>
+
+      <div>
+      <Link to="/profile" className="nav-link" onClick={() => setActiveNav(3)}>
+        <FontAwesomeIcon icon={faAddressCard} className={activeNav === 3 ? "nav-item active" : "nav-item"} />
+        </Link>
+        </div>
+
+        <div>{""}</div>
+
     </nav>
     );
 };
