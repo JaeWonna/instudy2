@@ -23,7 +23,7 @@ function HomeLayout() {
             <div>메인페이지입니다</div>
                 </Row>
 
-            <Row>
+            {/* <Row>
                     <h2>메뉴</h2>
                 <hr/>
                         {
@@ -32,7 +32,7 @@ function HomeLayout() {
                             ))
                         }
 
-            </Row>
+            </Row> */}
 
             </>
         

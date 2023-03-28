@@ -42,6 +42,7 @@ import Rank from "./pages/Rank";
 import Group from "./pages/Group"
 import Profile from "./pages/Profile"
 import BottomNav from './BottomNav';
+import { Outlet } from 'react-router-dom';
 
 function App() {
 
@@ -92,6 +93,8 @@ function App() {
 
                   </Routes>
                   </Container>
+
+                  <Outlet />
           </Container>
       </>
 
