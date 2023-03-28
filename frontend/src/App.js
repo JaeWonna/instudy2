@@ -31,7 +31,7 @@ import axios from "axios";
 import SignIn from "./containers/sign/sign_in/SignIn";
 import SignUp from "./containers/sign/sign_up/SignUp";
 import HomeLayout from "./components/common/layouts/HomeLayout";
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
 import Header from "./components/Header";
 import Task from "./pages/Task";
 import StudyTime from "./pages/StudyTime";
@@ -45,25 +45,22 @@ import BottomNav from './BottomNav';
 
 function App() {
 
-    const [hello, setHello] = useState('')
+    const [menu, setMenu] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/hello')
-            .then(response => setHello(response.data))
-            .catch(error => console.log(error))
+      const menudata = [
+        {id: 1, content: '스터디 그룹'},
+        {id: 2, content: '프로필'},
+      ];
+
+      setMenu([...menudata]);
     }, []);
 
   return (
       <>
-          <div>
-              백엔드에서 가져온 데이터입니다 : {hello}
-          </div>
-          <div>
-            <Link to="/bottomNav">BottomNav</Link>
-          </div>
-
           <Container fluid>
-              <Header />
+              <Header title="스터디 그룹"/>
+              <Container>
                   <Routes>
                       <Route path="/" element={<HomeLayout />}>
 
@@ -94,6 +91,7 @@ function App() {
                       <Route path="/bottomNav" element={<BottomNav />}></Route>
 
                   </Routes>
+                  </Container>
           </Container>
       </>
 

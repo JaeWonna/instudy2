@@ -52,3 +52,9 @@ nav > div {
   height: 45px;
   line-height: 45px;
 }
+
+.TextBox {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+}
