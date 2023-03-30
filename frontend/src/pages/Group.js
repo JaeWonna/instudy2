@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {Container, Row, Col} from 'react-bootstrap';
+import groupMember from '../img/groupMember.jpg'; 
 
 const Group = () => {
     const [group, setGroup] = useState([]);
@@ -14,6 +15,10 @@ const Group = () => {
         setGroup([...groupdata]);
     }, []);
 
+    const imgStyle = {
+        width: '70px',
+    }
+
     return (
        <>
        {
@@ -27,6 +32,10 @@ const Group = () => {
             </>
         ))
        }
+             <div class="flex-shrink-0">
+                  <img src={groupMember} alt="Generic placeholder" class="img-fluid rounded-circle border border-dark border-3" style={imgStyle} />
+
+              </div>
        </>
     );
 };
