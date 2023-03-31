@@ -13,7 +13,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public Long Join(User user) {
+    public String Join(User user) {
         validateDuplicateMember(user);//중복 회원 검증
         userRepository.save(user);
         return user.getId();
