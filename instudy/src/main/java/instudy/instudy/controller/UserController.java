@@ -15,7 +15,6 @@ public class UserController {
 
     private final UserService userService;
 
-
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -23,6 +22,12 @@ public class UserController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public void createForm(@RequestBody Map<String, String> ParamMap) {
         System.out.println("aaaaaaaasdasdasdasdasd");
+        System.out.println(ParamMap);
+    }
+
+    @RequestMapping(value = "/signin", method = RequestMethod.POST)
+    public void signin(@RequestBody Map<String, String> ParamMap) {
+        System.out.println("로그인 테스트");
         System.out.println(ParamMap);
     }
 

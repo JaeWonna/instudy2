@@ -26,7 +26,7 @@ const SignIn = (props) => {
         console.log("ID : ", inputId);
         console.log("PW : ", inputPw);
         axios
-            .post("/api/login", {
+            .post("/signin", {
                 email: inputId,
                 passwd: inputPw,
             })
