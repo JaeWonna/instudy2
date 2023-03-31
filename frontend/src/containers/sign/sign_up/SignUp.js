@@ -17,7 +17,7 @@ const SignUp = () => {
     const signUp = () => {
         console.log(JSON.stringify(values));
         axios
-            .post("http://localhost:8080/api/register", {
+            .post('/signup', {
                 id: values.id,
                 password: values.password,
                 name: values.userName,

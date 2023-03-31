@@ -3,13 +3,14 @@ package instudy.instudy.controller;
 import instudy.instudy.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
-@Controller
+@CrossOrigin(origins = "*")
+@RestController
 public class UserController {
 
     private final UserService userService;
@@ -19,10 +20,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/signup")
-    public void createForm(@RequestParam Long id, @RequestParam String password) {
-        System.out.println("aaaaaaaasdasdasdasdasd"+id);
-        System.out.println(password);
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    public void createForm(@RequestBody Map<String, String> ParamMap) {
+        System.out.println("aaaaaaaasdasdasdasdasd");
+        System.out.println(ParamMap);
     }
 
 //
