@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row } from 'react-bootstrap';
 import groupMember from '../../img/groupMember.jpg'; 
+import * as mdb from 'mdb-ui-kit';
+import { Modal } from 'mdb-ui-kit';
+import 'mdb-ui-kit/css/mdb.min.css';
 
 const GroupMainView = () => {
     const imgStyle = {
