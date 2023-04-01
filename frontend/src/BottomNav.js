@@ -12,32 +12,34 @@ const BottomNav = () => {
   const [activeNav, setActiveNav] = useState(1);
 
     return (
-            <nav className="wrapper">
-      {/* 하단 네비게이션 최상위 태그 */}
+      <nav class="navbar fixed-bottom">
+    <div class="card-body d-flex justify-content-center">
+<div class="card">
+  <div class="card-body">
 
-      <div>{""}</div>
-
-      <div>
+  <div>
       <Link to="/" className="nav-link" onClick={() => setActiveNav(1)}>
         <FontAwesomeIcon icon={faHome} className={activeNav === 1 ? "nav-item active" : "nav-item"} />
         </Link>
         </div>
 
-      <div>
+        <div>
       <Link to="/group" className="nav-link" onClick={() => setActiveNav(2)}>
         <FontAwesomeIcon icon={faUsers} className={activeNav === 2 ? "nav-item active" : "nav-item"} />
         </Link>
         </div>
 
-      <div>
+        <div>
       <Link to="/profile" className="nav-link" onClick={() => setActiveNav(3)}>
         <FontAwesomeIcon icon={faAddressCard} className={activeNav === 3 ? "nav-item active" : "nav-item"} />
         </Link>
         </div>
 
-        <div>{""}</div>
+    </div>
+</div>
+</div>
 
-    </nav>
+</nav>
     );
 };
 
