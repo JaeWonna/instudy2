@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {Container, Row, Col} from 'react-bootstrap';
 import groupMember from '../img/groupMember.jpg'; 
+import { Link } from "react-router-dom";
 
 const Group = () => {
     const [group, setGroup] = useState([]);
@@ -27,6 +28,7 @@ const Group = () => {
             <Container>
                 <Row>{" "}</Row>
             <Row>{group.content}</Row>
+            <Row><Link to={group.link}>{group.content}</Link></Row>
             <hr/>
             </Container>
             </>
