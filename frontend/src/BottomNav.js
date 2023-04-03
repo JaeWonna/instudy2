@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faUsers, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+import {Container, Row, Col} from 'react-bootstrap';
 
 
 import './css/BottomNav.css';
@@ -12,32 +13,44 @@ const BottomNav = () => {
   const [activeNav, setActiveNav] = useState(1);
 
     return (
-      <nav class="navbar fixed-bottom">
-    <div class="card-body d-flex justify-content-center">
-<div class="card">
+<nav class="navbar fixed-bottom">
+  <div class="container row" style={{float: 'none', margin:'100 auto'}}>
+    <div class="col-md-3" style={{float: 
+      'none', margin:'0 auto'}}>
+
+    <div class="card">
   <div class="card-body">
 
-  <div>
+    <Container>
+      <Row>
+
+  <Col>
       <Link to="/" className="nav-link" onClick={() => setActiveNav(1)}>
         <FontAwesomeIcon icon={faHome} className={activeNav === 1 ? "nav-item active" : "nav-item"} />
         </Link>
-        </div>
+        </Col>
 
-        <div>
+        <Col>
       <Link to="/group" className="nav-link" onClick={() => setActiveNav(2)}>
         <FontAwesomeIcon icon={faUsers} className={activeNav === 2 ? "nav-item active" : "nav-item"} />
         </Link>
-        </div>
+        </Col>
 
-        <div>
+        <Col>
       <Link to="/profile" className="nav-link" onClick={() => setActiveNav(3)}>
         <FontAwesomeIcon icon={faAddressCard} className={activeNav === 3 ? "nav-item active" : "nav-item"} />
         </Link>
-        </div>
+        </Col>
+
+        </Row>
+        </Container>
 
     </div>
 </div>
-</div>
+
+
+    </div>
+  </div>
 
 </nav>
     );
