@@ -44,6 +44,7 @@ import Profile from "./pages/Profile"
 import BottomNav from './BottomNav';
 import { Outlet } from 'react-router-dom';
 import GroupMainView from './components/group/GroupMainView';
+import ProfileGroup from './components/Profile/ProfileGroup';
 
 function App() {
 
@@ -92,6 +93,7 @@ function App() {
                       </Route>
                       <Route path="/bottomNav" element={<BottomNav />}></Route>
                       <Route path="/GroupMainView" element={<GroupMainView />}></Route>
+                      <Route path="ProfileGroup" element={<ProfileGroup />}></Route>
 
                   </Routes>
                   </Container>
