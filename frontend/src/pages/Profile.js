@@ -1,4 +1,6 @@
 import profile from '../img/profile.png';
+import ProfileGroupView from '../views/ProfileGroupView';
+import { Container, Row } from 'react-bootstrap';
 
 
 export default function Feed() {
@@ -7,6 +9,7 @@ export default function Feed() {
         {/*<div>프로필 페이지입니다</div>*/}
 
             <div className="row">
+                
                 <div className="col-lg-4">
                     <div className="card mb-4">
                         <div className="card-body text-center">
@@ -22,6 +25,14 @@ export default function Feed() {
                         </div>
                     </div>
                 </div>
+
+                <div className="col-lg-8">
+                    <Container>
+                       <Row>가입한 스터디 그룹(정렬 필요)</Row>
+                    <ProfileGroupView />
+                    </Container>
+                </div>
+
             </div>
         </>
     );
