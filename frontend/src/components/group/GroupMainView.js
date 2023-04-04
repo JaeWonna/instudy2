@@ -5,8 +5,11 @@ import groupMember from '../../img/groupMember.jpg';
 import * as mdb from 'mdb-ui-kit';
 import { Modal } from 'mdb-ui-kit';
 import 'mdb-ui-kit/css/mdb.min.css';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const GroupMainView = () => {
+const GroupMainView = (props) => {
+    const id = useParams();
+
     const imgStyle = {
         width: '70px',
     }
@@ -23,6 +26,17 @@ const GroupMainView = () => {
 
     const cardStyle = {
         width: '18rem',
+    }
+
+    const params = useParams(); //url로 넘어온 파라미터를 받는 역할 (App.js 의 :id 참고)
+    const group_id = params.id; //(params의 :id를 받는 역할)
+
+    useEffect( () => {
+        getAndSetGroup(group_id);
+    }, [group_id]);
+
+    const getAndSetGroup = (group_id) => {
+
     }
 
     console.log(1)
