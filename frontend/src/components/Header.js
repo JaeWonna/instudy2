@@ -7,17 +7,42 @@ import { Route, Routes } from 'react-router-dom';
 
 const Header = (props) => {
 
+    const MainHeader = () => {
+        return (
+            <>
+            <div>메인 페이지</div>
+            </>
+        );
+    };
+
+    const GroupHeader = () => {
+        return (
+            <>
+            <div>그룹 페이지</div>
+            </>
+        );
+    };
+
+    const ProfileHeader = () => {
+        return (
+            <>
+            <div>프로필 페이지</div>
+            </>
+        );
+    };
+
     console.log(props.menu);
     return (
         <>
         <Container>
                        <div className="TextBox">
-                        <div>헤더 올 자리</div>
-                       <Routes>
-                       <Route path="/group" exact render={() => <div>메인</div>}/>
-            <Route path="/group" exact render={() => <div>스터디 그룹</div>}/>
-            <Route path="/profile" exact render={() => <div>프로필</div>}/>
+                        <div>
+                        <Routes>
+                       <Route path="/" element={<MainHeader/>}/>
+            <Route path="/group" element={<GroupHeader/>}/>
+            <Route path="/profile" element={<ProfileHeader/>}/>
             </Routes>
+                        </div>
            </div>
            <hr/>
            </Container>
