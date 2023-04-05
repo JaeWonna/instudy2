@@ -54,7 +54,7 @@ const SignUp = () => {
                 type="button"
                 onClick={() => signUp()}
             >
-                확인
+                확인얍
             </Button>
         </>
 

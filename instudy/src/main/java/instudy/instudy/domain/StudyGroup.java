@@ -1,9 +1,8 @@
 package instudy.instudy.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class StudyGroup {
@@ -14,6 +13,15 @@ public class StudyGroup {
     private String description;
     private Long fixedNumber;
     private Long currentNumber;
+
+    @OneToMany(mappedBy = "study_group")
+    private List<UserStudyGroup> UserStudyGroup = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "study_group_homework_id")
+    private StudyGroupHomework studyGroupHomework;
+
+
 
     public Long getGroupId() {
         return groupId;
